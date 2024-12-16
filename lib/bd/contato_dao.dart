@@ -7,7 +7,7 @@ class ContatoDao {
       Database database = await DBHelper().initDB();
       await database.insert('CONTATOS', contato.toJson());
     } catch (e) {
-      print('Erro ao salvar o contato : $e');
+      print('Erro ao salvar o contatoo : $e');
     }
   }
   Future<List<Contato>> listarContatos() async {
