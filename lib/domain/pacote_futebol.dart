@@ -12,14 +12,23 @@ class PacoteFutebol {
     required this.detalhesExtras, 
   });
 
-  PacoteFutebol.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    titulo = json['titulo'];
-    urlImage = json['urlimage'];
-    descricao = json['descricao'];
-    detalhesExtras = json['detalhesextras'];
-
-
+  Map<String, dynamic> toJson() {
+    return {
+      'titulo': titulo,
+      'url_imagem': urlImage,
+      'descricao': descricao,
+      'detalhes': detalhesExtras,
+    };
   }
+
+  factory PacoteFutebol.fromJson(Map<String, dynamic> json) {
+    return PacoteFutebol(
+      urlImage: json['url_imagem'] as String,
+      titulo: json['titulo'] as String,
+      descricao: json['descricao'] as String,
+      detalhesExtras: json['detalhes'] as String,
+    );
+  }
+
 
 }
